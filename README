@@ -1,0 +1,18 @@
+  
+  omp and theadpool should be tested separately.
+
+  the test is evaluated on fugaku A64FX cpu, which has 4 numa domains, and core id is from 12 to 59.
+
+  
+  //**************************************************************
+  // test omp
+  // compile command  mpic++ -O3 main.cpp -o main -pthread -fopenmp
+  //**************************************************************
+  threadpool.omp_thread();
+
+  //**************************************************************
+  // test threadpool
+  // compile command  mpic++ -O3 main.cpp -o main -pthread
+  //**************************************************************
+  threadpool.start_pthread();
+  threadpool.control_pthread();
